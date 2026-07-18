@@ -124,13 +124,13 @@ header h1 {
   flex-direction: column;
 }
 
-.call-color {
+.call-primary {
   font-size: 1.6rem;
   font-weight: 800;
   letter-spacing: 0.02em;
 }
 
-.call-limb {
+.call-secondary {
   font-size: 1.1rem;
   color: var(--muted);
   font-weight: 600;
@@ -242,7 +242,7 @@ footer {
 }
 
 @media (max-width: 360px) {
-  .call-color {
+  .call-primary {
     font-size: 1.3rem;
   }
 }

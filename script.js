@@ -56,17 +56,17 @@ function announce() {
   const call = pickCall();
   lastCall = call;
 
-  callColor.textContent = call.color.name;
   callLimb.textContent = call.limb;
+  callColor.textContent = call.color.name;
   colorDot.style.backgroundColor = call.color.hex;
   ringProgress.style.stroke = call.color.hex;
 
   const li = document.createElement("li");
-  li.textContent = `${call.color.name} - ${call.limb}`;
+  li.textContent = `${call.limb} - ${call.color.name}`;
   historyList.appendChild(li);
   historyList.scrollTop = historyList.scrollHeight;
 
-  speak(`${call.color.name}, ${call.limb}`);
+  speak(`${call.limb}, ${call.color.name}`);
 
   secondsLeft = intervalSeconds;
   updateRing();
@@ -111,8 +111,8 @@ function reset() {
   pause();
   lastCall = null;
   secondsLeft = intervalSeconds;
-  callColor.textContent = "Ready?";
-  callLimb.textContent = "Press Start";
+  callLimb.textContent = "Ready?";
+  callColor.textContent = "Press Start";
   colorDot.style.backgroundColor = "#d1d5db";
   ringProgress.style.stroke = "#2ba84a";
   updateRing();
