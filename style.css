@@ -1,0 +1,248 @@
+:root {
+  --red: #e5383b;
+  --blue: #1d7bd6;
+  --yellow: #f5c518;
+  --green: #2ba84a;
+  --bg-1: #1a1a2e;
+  --bg-2: #16213e;
+  --card: #ffffff;
+  --text-dark: #1a1a2e;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top, var(--bg-2), var(--bg-1));
+  color: #f4f4f6;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px 48px;
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 2rem;
+  background: linear-gradient(90deg, var(--red), var(--yellow), var(--green), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin: 0;
+  color: #cfd2e0;
+  font-size: 0.95rem;
+}
+
+.call-card {
+  background: var(--card);
+  color: var(--text-dark);
+  border-radius: 20px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  fill: none;
+  stroke: #e5e7eb;
+  stroke-width: 8;
+}
+
+.ring-progress {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 339.3;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear, stroke 0.3s ease;
+}
+
+.ring-time {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.call-display {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.color-dot {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #d1d5db;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.call-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.call-color {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.call-limb {
+  font-size: 1.1rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn {
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #2c2f48;
+  color: #f4f4f6;
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--green), var(--blue));
+}
+
+.btn.danger {
+  background: #4a1f28;
+  color: #ffb4b4;
+}
+
+.settings {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.setting input[type="range"] {
+  flex: 1;
+}
+
+.setting.toggle {
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.setting.toggle input {
+  width: 18px;
+  height: 18px;
+}
+
+#intervalValue {
+  min-width: 36px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.history {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.history h2 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: #cfd2e0;
+}
+
+.history-list {
+  margin: 0;
+  padding-left: 20px;
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.history-list li {
+  padding: 4px 0;
+  font-size: 0.92rem;
+  color: #e4e5ee;
+}
+
+footer {
+  text-align: center;
+  color: #7c7f95;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 360px) {
+  .call-color {
+    font-size: 1.3rem;
+  }
+}

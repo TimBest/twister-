@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twister Caller</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🌀 Twister Caller</h1>
+      <p class="subtitle">Left hand, right foot, GO!</p>
+    </header>
+
+    <main>
+      <section class="call-card" id="callCard">
+        <div class="ring" id="ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="54" />
+            <circle class="ring-progress" id="ringProgress" cx="60" cy="60" r="54" />
+          </svg>
+          <div class="ring-time" id="ringTime">15</div>
+        </div>
+
+        <div class="call-display">
+          <div class="color-dot" id="colorDot"></div>
+          <div class="call-text">
+            <div class="call-color" id="callColor">Ready?</div>
+            <div class="call-limb" id="callLimb">Press Start</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="pauseBtn" class="btn" disabled>Pause</button>
+        <button id="nextBtn" class="btn">Next Call</button>
+        <button id="resetBtn" class="btn danger">Reset</button>
+      </section>
+
+      <section class="settings">
+        <label class="setting">
+          Interval
+          <input type="range" id="intervalRange" min="5" max="30" step="1" value="15" />
+          <span id="intervalValue">15s</span>
+        </label>
+
+        <label class="setting toggle">
+          <input type="checkbox" id="voiceToggle" checked />
+          Voice announcements
+        </label>
+
+        <label class="setting toggle">
+          <input type="checkbox" id="noRepeatToggle" checked />
+          Avoid repeating last call
+        </label>
+      </section>
+
+      <section class="history">
+        <h2>History</h2>
+        <ol id="historyList" class="history-list"></ol>
+      </section>
+    </main>
+
+    <footer>
+      <p>Left / Right hand or foot &middot; Red, Blue, Yellow, Green</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
